@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, TextInput, Button, FlatList, TouchableOpacity, Modal } from 'react-native';
 import React, { useState } from 'react';
+import { CustomModal} from "./components/index"
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -144,7 +145,7 @@ const onHandleModal = (id) => {
     keyExtractor={(item) => item.id.toString()}
     showsVerticalScrollIndicator={false}
     />
-    <Modal 
+    <CustomModal 
     visible={modalVisible}
     animationType="slide">
       <View style={styles.modalContainer}>
@@ -166,7 +167,7 @@ const onHandleModal = (id) => {
         onPress={() =>setModalVisible(!modalVisible)}
         color= "#20182C"/>
       </View>
-    </Modal>
+    </CustomModal>
     </View>
   );
 }
