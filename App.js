@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, TextInput, Button, FlatList, TouchableOpacity, Modal } from 'react-native';
 import React, { useState } from 'react';
-import { CustomModal} from "./components/index"
+import { CustomModal } from "./components/index"
 const styles = StyleSheet.create({
   container: {
     flex: 1,
