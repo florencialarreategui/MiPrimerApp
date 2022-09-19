@@ -1,24 +1,10 @@
 import { StyleSheet, Text, View, TextInput, Button, FlatList, TouchableOpacity, Modal } from 'react-native';
 import React, { useState } from 'react';
-import { CustomModal } from "./components/index"
+import { AddTask, CustomModal } from "./components/index"
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#577590',
-  },
-  inputContainer:{
-    marginTop:50,
-    marginBotton:20,
-    marginHorizontal:20,
-    flexDirection:"row",
-    justifyContent:"space-between",
-  },
-  input:{
-    width:"75%",
-    borderBottomColor:"#F2A541",
-    borderBottomWidth: 1,
-    height:40,
-    color:"#0F151A"
   },
   itemList:{
     flex: 1,
@@ -124,20 +110,16 @@ const onHandleModal = (id) => {
   
   return (
     <View style={styles.container}>
-      <View style={styles.inputContainer}>
-      <TextInput 
-      placeholder="Agregar tarea"
-       style={styles.input}
-       selectionColor="#F19846"
-       placeholderTextColor="#F19846"
-       onChangeText={onHandleChangeText}
-       value={task}
-       />
-      <Button 
-      title='Agregar' 
-      onPress={addItem} 
-      color="#F2A541"/>
-    </View>
+    <AddTask
+    item = {task}
+    onChangeText = {onHandleChangeText}
+    placeholder= "Agregar tarea"
+    addItem={addItem}
+    selectionColor = "#F19846"
+    placeholderTextColor= "#F19846"
+    textButton = "Add"
+    color = "#F19846"
+    />
     <FlatList
     style={styles.itemList}
     data={tasks}
